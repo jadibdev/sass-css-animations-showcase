@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <link rel="stylesheet" href="main.css">
+    <title>Document</title>
+    
+</head>
+<body>
+    <div class="container" id="nav">
+        <header class="animated slideInDown text-center bg-primary text-white p-4">
+            <h1 class="display-4">CSS Animations List</h1>
+        </header>
+        <section id="section-1" class="animated slideInLeft bg-faded p-4 my-3">
+            <h1 id="one" class="ml-4">Clear All</h1>
+            <p id="one-p" class="mr-3 ml-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Similique commodi nihil hic labore adipisci repudiandae, 
+                eligendi perferendis distinctio inventore! Consequuntur quidem 
+                animi molestiae sequi quas? Dolor possimus blanditiis, fugit 
+                deleniti dolorum dolore dignissimos error! Rem facilis veniam 
+								consequatur vitae asperiores.</p>
+								<button id="animateBtn2" class="btn btn-primary ml-4">Clear All</button>
+        </section>
+        <section id="section-2" class="animated slideInRight bg-faded p-4 my-3">
+            <h1 id="anim-head" class="ml-4">Stretch</h1>
+            <p id="anim-body" class="mr-3 ml-4">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Similique commodi nihil hic labore adipisci repudiandae,
+                eligendi perferendis distinctio inventore! Consequuntur quidem
+                animi molestiae sequi quas? Dolor possimus blanditiis, fugit
+                deleniti dolorum dolore dignissimos error! Rem facilis veniam
+                consequatur vitae asperiores.</p>
+								<button id="animateBtn" class="btn btn-primary ml-4">Stretch</button>
+				</section>
+				<section id="section-3" class="animated slideInLeft bg-faded p-4 my-3">
+					<h1 id="three" class="ml-4">Fade Out</h1>
+					<p id="p-three" class="mr-3 ml-4">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+						Similique commodi nihil hic labore adipisci repudiandae,
+						eligendi perferendis distinctio inventore! Consequuntur quidem
+						animi molestiae sequi quas? Dolor possimus blanditiis, fugit
+						deleniti dolorum dolore dignissimos error! Rem facilis veniam
+						consequatur vitae asperiores.</p>
+					<button id="animateBtn3" class="btn btn-primary ml-4">Fade Out</button>
+				</section>
+				<section id="section-4" class="animated slideInRight bg-faded p-4 my-3">
+					<h1 id="four" class="ml-4">Bounce In</h1>
+					<p id="p-four" class="mr-3 ml-4">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+						Similique commodi nihil hic labore adipisci repudiandae,
+						eligendi perferendis distinctio inventore! Consequuntur quidem
+						animi molestiae sequi quas? Dolor possimus blanditiis, fugit
+						deleniti dolorum dolore dignissimos error! Rem facilis veniam
+						consequatur vitae asperiores.</p>
+					<button id="animateBtn4" class="btn btn-primary ml-4">Bounce In</button>
+				</section>
+				<section id="section-5" class="animated slideInLeft bg-faded p-4 my-3">
+					<h1 id="five" class="ml-4">Flip</h1>
+					<p id="p-five" class="mr-3 ml-4">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+						Similique commodi nihil hic labore adipisci repudiandae,
+						eligendi perferendis distinctio inventore! Consequuntur quidem
+						animi molestiae sequi quas? Dolor possimus blanditiis, fugit
+						deleniti dolorum dolore dignissimos error! Rem facilis veniam
+						consequatur vitae asperiores.</p>
+					<button id="animateBtn5" class="btn btn-primary ml-4">Flip</button>
+				</section>
+    </div>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script>
+        $(function() {
+						$('#animateBtn').click(function() {
+							animate('#anim-head', 'bounce');
+							animate('#anim-body', 'rubberBand');
+							return false;
+						});
+
+						$('#animateBtn2').click(function () {
+						animate('header', 'slideOutUp');
+						animate('#one', 'slideOutRight');
+						animate('#one-p', 'slideOutLeft');
+						setTimeout(function() {
+							$('header').css('visiblity', 'hidden');
+						}, 2000);
+						});
+
+						$('#animateBtn3').click(function () {
+								animate('#three', 'fadeOut');
+								animate('#p-three', 'fadeOut');
+								setTimeout(function () {
+									$('header').css('visiblity', 'hidden');
+								}, 1000);
+						return false;
+					});
+
+					$('#animateBtn4').click(function () {
+						animate('#four', 'bounceInLeft');
+						animate('#p-four', 'bounceInRight');
+						setTimeout(function () {
+							$('header').css('visiblity', 'hidden');
+						}, 1000);
+						return false;
+					});
+
+					$('#animateBtn5').click(function () {
+						animate('#five', 'flip');
+						animate('#p-five', 'flip');
+						setTimeout(function () {
+							$('header').css('visiblity', 'hidden');
+						}, 1000);
+						return false;
+					});
+
+            // animate
+            function animate(element, animation) {
+                $(element).addClass('animated ' + animation);
+                var wait = setTimeout(function() {
+                    $(element).removeClass('animated ' + animation)
+                }, 2000);
+            }
+						
+				})
+    </script>
+</body>
+</html>
